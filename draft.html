@@ -1,0 +1,365 @@
+<!-- Taken from https://codepen.io/jonnitto/project/editor/XRPjxx -->
+
+<!doctype html>
+<html lang="en" ng-app=Simpleform>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="newpro.css">
+
+    <title>Hello, world!</title>
+    <style type="text/css">
+    /* body {
+        width: 100wh;
+        height: 90vh; */
+        /* color: #fff;
+        background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB) !important;
+        background-size: 400% 400%;
+        -webkit-animation: Gradient 15s ease infinite;
+        -moz-animation: Gradient 15s ease infinite;
+          animation: Gradient 1s ease infinite;
+        } */
+
+        body {
+        	width: 100wh;
+        	height: 90vh;
+        	color: #000;
+        	/* background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+        	background-size: 400% 400%;
+        	-webkit-animation: Gradient 15s ease infinite;
+        	-moz-animation: Gradient 15s ease infinite;
+        	animation: Gradient 7s ease infinite; */
+        }
+        .form-element .ng-invalid{
+          color: red !important;
+          border-bottom:1px red solid !important;
+        }
+        .form-element .ng-valid{
+            color: green !important;
+          border-bottom:1px green solid !important;
+        }
+
+
+
+        @keyframes Gradient {
+        0% {
+        background-position: 0% 50%
+        }
+        50% {
+        background-position: 100% 50%
+        }
+        100% {
+        background-position: 0% 50%
+        }
+        }
+        .Category
+        {
+          padding-left:0;
+        }
+        .Number
+        {
+            width: 30%
+        }
+        .
+
+        .whole
+        {
+            margin:3% 3%;
+        }
+        .space
+        {
+            margin:2% 2%;
+        }
+
+        .two
+        {
+            width: 40%;
+             @media(width: 798px)
+             {
+                width: 75%;
+             }
+
+        }
+
+        .marg
+        {
+            margin-left: 20% !important;
+        }
+        @media(width: 798px)
+        {
+            .two
+            {
+                width: 100% !important;
+            }
+            .Category
+            {
+                width: 100% !important;
+            }
+
+             .marg
+        {
+            margin-left: 0% !important;
+        }
+        }
+    </style>
+</head>
+<body ng-controller="RegistrationController as reg">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+
+<div class="one">
+<div class="whole">
+
+<form method=post class="form-card" action=form.php name='regForm' novalidate>
+    <fieldset class="form-fieldset">
+        <legend class="form-legend">DRAW MY EVENT
+        </legend>
+<div class="form-checkbox-legend">Event Details:</div>
+        <div class="Category row d-lg-flex d-md-block pl-0">
+
+        <div class="form-element form-select col-lg-5 col-md-5 mx-sm-3 wd-100">
+            <select id="field-be1h8i-ll2hpg-q4efzm-nfjj1e-udkw5r" class="form-element-field">
+
+                <option value="Personal\">Personal</option>
+                <option value="Organisational">Organisational</option>
+                <option value="Conference">Conference</option>
+                <option value="Wedding">Wedding</option>
+                <option value="Shows">Shows</option>
+            </select>
+            <div class="form-element-bar"></div>
+            <label class="form-element-label" for="field-be1h8i-ll2hpg-q4efzm-nfjj1e-udkw5r">Select your Category</label>
+        </div>
+
+         <div class="form-element form-select mx-lg-4 mx-sm-3 col-lg-5 col-md-5 wd-100">
+            <select id="field-be1h8i-ll2hpg-q4efzm-nfjj1e-udkw5r" class="form-element-field">
+
+                <option value="Personal">Personal</option>
+                <option value="Organisational">Organisational</option>
+                <option value="Conference">Conference</option>
+                <option value="Wedding">Wedding</option>
+                <option value="Xyx">Xyx</option>
+            </select>
+            <div class="form-element-bar"></div>
+            <label class="form-element-label" for="field-be1h8i-ll2hpg-q4efzm-nfjj1e-udkw5r">Select your Sub Category</label>
+        </div>
+    </div>
+    <div class="w-100 d-lg-flex d-md-block">
+           <div class="w-100  my-4 ">
+         <div class="form-element form-input w-30">
+            <input id="field-omv6eo-metm0n-5j55wv-w3wbws-6nm2b9" class="form-element-field" name='eventname' ng-model=reg.user.eventname placeholder="Event Name" type="input" required minlength="4" ng-maxlength="10">
+            <div class="form-element-bar" ng-hide="(regForm.eventname.$dirty && regForm.eventname.$viewValue!=='')" ></div>
+
+            <span class="position-absolute" ng-if="((regForm.eventname.$error.minlength || regForm.eventname.$error.required ) && regForm.eventname.$touched)">
+              eventname must be atleast 4 characters long
+              </span>
+              <span class="position-absolute" class="position-absolute" ng-if="(regForm.eventname.$error.maxlength && regForm.eventname.$touched)">
+                eventname must not be more than 10 characters
+                </span>
+            <label class="form-element-label" for="field-omv6eo-metm0n-5j55wv-w3wbws-6nm2b9">Event Name</label>
+        </div>
+    </div>
+
+       <div class="w-100 px-4 my-4 ">
+         <div class="form-element form-input w-30">
+            <input id="field-omv6eo-metm0n-5j55wv-w3wbws-6nm2b9" class="form-element-field" name='date' ng-model=reg.user.date placeholder="Event Date" type="input" required minlength="4" ng-maxlength="10">
+            <div class="form-element-bar" ng-hide="(regForm.date.$touched)"></div>
+            <span class="position-absolute" ng-if="((regForm.date.$error.minlength || regForm.date.$error.required) && regForm.date.$touched)">
+              enter valid date
+              </span>
+              <span class="position-absolute" ng-if="(regForm.date.$error.maxlength && regForm.date.$touched)">
+                enter valid date
+                </span>
+            <label class="form-element-label" for="field-omv6eo-metm0n-5j55wv-w3wbws-6nm2b9">Event Date</label>
+        </div>
+    </div>
+</div>
+
+    <div class="w-80 d-lg-flex d-md-block">
+        <div class="w-100 my-4 ">
+         <div class="form-element form-input w-40">
+            <input id="field-omv6eo-metm0n-5j55wv-w3wbws-6nm2b9" class="form-element-field" name='people' ng-model=reg.user.people placeholder="Number of people" type="input" required minlength="1" ng-maxlength="2000">
+            <div class="form-element-bar" ng-hide="(regForm.people.$touched)"></div>
+            <span class="position-absolute" ng-if="((regForm.people.$error.minlength || regForm.people.$error.required) && regForm.people.$touched)">
+              minimum 1 person should be there
+              </span>
+              <span class="position-absolute" ng-if="(regForm.people.$error.maxlength && regForm.people.$touched)">
+
+                </span>
+            <label class="form-element-label" for="field-omv6eo-metm0n-5j55wv-w3wbws-6nm2b9">Number of people</label>
+        </div>
+    </div>
+        <div class="d-lg-flex  w-100 px-3 my-4">
+        <div class="Budget w-100">
+         <div class="form-element form-input w-30">
+            <input id="field-omv6eo-metm0n-5j55wv-w3wbws-6nm2b9" class="form-element-field" name='budgetfrom' ng-model=reg.user.budgetfrom placeholder="From" type="Number" required minlength="1" ng-maxlength="10">
+            <div class="form-element-bar" ng-hide="(regForm.budgetfrom.$touched)"></div>
+            <span class="position-absolute" ng-if="((regForm.budgetfrom.$error.minlength || regForm.budgetfrom.$error.required) && regForm.budgetfrom.$touched)">
+
+              </span>
+              <span class="position-absolute" ng-if="(regForm.budgetfrom.$error.maxlength && regForm.budgetfrom.$touched)">
+                username must not be more than 10 characters
+                </span>
+            <label class="form-element-label" for="field-omv6eo-metm0n-5j55wv-w3wbws-6nm2b9">Budget From:</label>
+        </div>
+        </div>
+        <div class="Budget w-100 pl-3">
+         <div class="form-element form-input w-30">
+            <input id="field-omv6eo-metm0n-5j55wv-w3wbws-6nm2b9" class="form-element-field" name='budgetto' ng-model=reg.user.budgetto placeholder="to" type="Number" required minlength="1" ng-maxlength="10">
+            <div class="form-element-bar" ng-hide="(regForm.budgetto.$touched)"></div>
+            <span class="position-absolute" ng-if="((regForm.budgetto.$error.minlength || regForm.budgetto.$error.required) && regForm.budgetto.$touched)">
+              budget
+              </span>
+              <span class="position-absolute" ng-if="(regForm.budgetto.$error.maxlength && regForm.budgetto.$touched)">
+
+                </span>
+            <label class="form-element-label" for="field-omv6eo-metm0n-5j55wv-w3wbws-6nm2b9">Budget To:</label>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+        <div class="services">
+        <div class="form-checkbox form-checkbox-inline">
+            <div class="form-checkbox-legend">Services:</div>
+            <div class="space">
+            <label class="form-checkbox-label">
+                <input name=rap class="form-checkbox-field" type="checkbox" />
+                <i class="form-checkbox-button"></i>
+                <span>Light/Sound</span>
+            </label>
+            <label class="form-checkbox-label">
+                <input name=pop class="form-checkbox-field" type="checkbox" />
+                <i class="form-checkbox-button"></i>
+                <span>Decoration</span>
+            </label>
+            <label class="form-checkbox-label">
+                <input name=rock class="form-checkbox-field" type="checkbox" />
+                <i class="form-checkbox-button"></i>
+                <span>Food</span>
+            </label>
+            <label class="form-checkbox-label">
+                <input name=metal class="form-checkbox-field" type="checkbox" />
+                <i class="form-checkbox-button"></i>
+                <span>Catering</span>
+            </label>
+            <label class="form-checkbox-label">
+                <input name=r_b class="form-checkbox-field" type="checkbox" />
+                <i class="form-checkbox-button"></i>
+                <span>Photography/Videography</span>
+            </label>
+        </div>
+        </div>
+    </div>
+    <div class="Specifications">
+        <div class="form-element form-textarea">
+            <textarea id="field-3naeph-0f3yuw-x153ph-dzmahy-qhkmgm" name=other class="form-element-field" placeholder="Other Specifications "></textarea>
+            <div class="form-element-bar"></div>
+
+            <label class="form-element-label" for="field-3naeph-0f3yuw-x153ph-dzmahy-qhkmgm">Other Specifications:</label>
+
+        </div>
+    </div>
+
+
+      <div class="form-checkbox-legend">Personal Details:</div>
+        <div class="first d-lg-flex d-md-block">
+         <div class="form-element form-input w-100">
+            <input id="field-omv6eo-metm0n-5j55wv-w3wbws-6nm2b9" class="form-element-field" name='username' ng-model=reg.user.username placeholder="Name" type="input" required minlength="4" ng-maxlength="10">
+            <div class="form-element-bar" ng-hide="(regForm.username.$touched)"></div>
+            <span class="position-absolute" ng-if="((regForm.username.$error.minlength || regForm.username.$error.required) && regForm.username.$touched)">
+              <!-- WARNING:  --> Username must be atleast 4 characters long
+              </span>
+              <span class="position-absolute" ng-if="(regForm.username.$error.maxlength && regForm.username.$touched)">
+          username must not be more than 10 characters
+                </span>
+            <label class="form-element-label" for="field-omv6eo-metm0n-5j55wv-w3wbws-6nm2b9">Name</label>
+        </div>
+
+
+         <div class="form-element form-input w-100 px-5">
+            <input id="field-omv6eo-metm0n-5j55wv-w3wbws-6nm2b9" class="form-element-field" name='city' ng-model=reg.user.city placeholder="Please fill your city name" type="input" required minlength="4" ng-maxlength="10">
+            <div class="form-element-bar" ng-hide="(regForm.city.$touched)"></div>
+            <span class="position-absolute" ng-if="((regForm.city.$error.minlength || regForm.city.$error.required) && regForm.city.$touched)">
+              cityname must be atleast 4 characters long
+              </span>
+              <span class="position-absolute" ng-if="(regForm.city.$error.maxlength && regForm.city.$touched)">
+                cityname must not be more than 10 characters
+                </span>
+            <label class="form-element-label" for="field-omv6eo-metm0n-5j55wv-w3wbws-6nm2b9">city</label>
+        </div>
+    </div>
+
+        <div class="first d-lg-flex d-md-block">
+         <div class="form-element form-input w-100 ">
+            <input id="field-omv6eo-metm0n-5j55wv-w3wbws-6nm2b9" class="form-element-field" name='number' ng-model=reg.user.number placeholder="Please fill your contact number " type="input" required minlength="10" ng-maxlength="12">
+            <div class="form-element-bar" ng-hide="(regForm.number.$touched)"></div>
+            <span class="position-absolute" ng-if="((regForm.number.$error.minlength || regForm.number.$error.required) && regForm.number.$touched)">
+              <!-- WARNING:  -->Contact should be of 10 characters
+              </span>
+              <span class="position-absolute" ng-if="(regForm.number.$error.maxlength && regForm.number.$touched)">
+                IT should be valid
+                </span>
+            <label class="form-element-label" for="field-omv6eo-metm0n-5j55wv-w3wbws-6nm2b9">Contact No.</label>
+        </div>
+
+
+         <div class="form-element form-input w-100 px-5">
+            <input id="field-omv6eo-metm0n-5j55wv-w3wbws-6nm2b9" class="form-element-field" name='email' ng-model=reg.user.email placeholder="E-mail" type="e-mail" required minlength="9" ng-maxlength="40">
+            <div class="form-element-bar" ng-hide="(regForm.email.$touched)"></div>
+            <span class="position-absolute" ng-if="((regForm.email.$error.minlength || regForm.email.$error.required) && regForm.email.$touched)">
+              enter valid email
+              </span>
+              <span class="position-absolute" ng-if="(regForm.email.$error.maxlength && regForm.email.$touched)">
+                enter valid email
+                </span>
+            <label class="form-element-label" for="field-omv6eo-metm0n-5j55wv-w3wbws-6nm2b9">E-mail</label>
+        </div>
+       </div>
+
+
+
+        <div class="fourth">
+         <div class="form-element form-input my-5">
+            <input id="field-omv6eo-metm0n-5j55wv-w3wbws-6nm2b9" class="form-element-field" name='address' ng-model=reg.user.address placeholder="Personal" type="input" required minlength="40" >
+            <div class="form-element-bar" ng-hide="(regForm.address.$touched)"></div>
+            <span class="position-absolute" ng-if="((regForm.address.$error.minlength || regForm.address.$error.required) && regForm.address.$touched)">
+              Warning! It shoul have minimum 40 characters
+              </span>
+
+            <label class="form-element-label" for="field-omv6eo-metm0n-5j55wv-w3wbws-6nm2b9">Personal/Organisatiional Address</label>
+        </div>
+    </div>
+
+
+    </fieldset>
+    <div class="form-actions">
+        <button
+        ng-disabled=regForm.$invalid
+        ng-click=reg.submit() class="form-btn" type="submit">Send inquiry</button>
+
+    </div>
+</form>
+</div>
+</div>
+<script type="text/javascript">
+    // Taken from https://codepen.io/jonnitto/project/editor/XRPjxx
+
+// Minimal Javascript (for Edge, IE and select box)
+document.addEventListener("change", function(event) {
+  let element = event.target;
+  if (element && element.matches(".form-element-field")) {
+    element.classList[element.value ? "add" : "remove"]("-hasvalue");
+  }
+});
+</script>
+</body>
+</html>
