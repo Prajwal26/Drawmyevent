@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 
 <head>
     <!-- Required meta tags-->
@@ -33,7 +33,12 @@
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
-
+    <style>
+    .col-lg-9
+    {
+      max-width: 100%;
+    }
+    </style>
 </head>
 
 <body class="animsition">
@@ -174,6 +179,18 @@
                             <a href="table.html">
                                 <i class="fas fa-table"></i>Tables</a>
                         </li>
+                        <li class="active">
+                            <a href="table.html">
+                                <i class="fas fa-table"></i>Tables</a>
+                        </li>
+                        <li class="active">
+                            <a href="table.html">
+                                <i class="fas fa-table"></i>Tables</a>
+                        </li>
+                        <li class="active">
+                            <a href="table.html">
+                                <i class="fas fa-table"></i>Tables</a>
+                        </li>
 
                     </ul>
                 </nav>
@@ -251,26 +268,33 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-lg-9">
-                                <div class="table-responsive table--no-card m-b-30" ng-app="myApp" ng-controller="customersCtrl">
+                                <div class="table-responsive table--no-card m-b-30"  ng-controller="customersCtrl as row">
+
                                     <table class="table table-borderless table-striped table-earning">
                                         <thead>
-                                            <tr ng-repeat="x in names">
-                                                <th>{{x.Personid}}</th>
-                                                <th>{{x.Name}}</th>
-                                                <th>{{x.City}}</th>
-                                                <th >{{x.Contact}}</th>
-                                                <th >{{x.Email}}</th>
-                                                <th >{{x.Address}}</th>
+                                            <tr>
+
+                                                <th>Name</th>
+                                                <th>City</th>
+                                                <th >Contact</th>
+                                                <th >Email</th>
+                                                <th >Address</th>
+                                                <td>Seen</td>
+                                                <th>Delete</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td ></td>
-                                                <td ></td>
-                                                <td ></td>
+                                            <tr ng-repeat="x in row.names" >
+
+                                                <td pid={{x.Personid}}>{{x.Name}}</td>
+                                                <td>{{x.City}}</td>
+                                                <td >{{x.Contact}}</td>
+                                                <td >{{x.Email}}</td>
+                                                <td >{{x.Address}}</td>
+                                                <td> <button ng-click='activity.seen = !activity.seen'>
+                                                  <span>{{activity.seen ? 'Mark unread' : 'Mark read'}}</span>
+                                                </button></td>
+                                                <td><button class='btn btn-danger' ng-click="row.del('person_details','Personid', x.Personid,$index )">Delete</button></td>
                                             </tr>
 
                                         </tbody>
@@ -315,14 +339,29 @@
     </script>
 
     <!-- Main JS-->
+    <script src=angular.min.js ></script>
+    <script src="app.js" charset="utf-8"></script>
+    <script src="all.Service.js" charset="utf-8"></script>
     <script src="js/main.js"></script>
-    <script>
+
+    <!-- <script>
     var app = angular.module('myApp', []);
-app.controller('customersCtrl', function($scope, $http) {
+app.controller('customersCtrl', function($http) {
+  var del=this;
   $http.get("person.php")
-  .then(function (response) {$scope.names = response.data.records;});
+  .then(function (response) {this.names = response.data.records;});
 });
-    </script>
+this.remove = function(index,personid){{
+  $http({
+   method: 'post',
+   url: 'delete.php'
+  }).then(function successCallback(response) {
+   this.names.push(response.data[0]);
+  });
+ }
+};
+
+    </script> -->
 
 </body>
 
