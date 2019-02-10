@@ -5,7 +5,7 @@
 $conn = new mysqli("localhost", "root", "", "draw_event");
 
 $result = $conn->query("SELECT eventdetails.event_name , eventdetails.event_date,eventdetails.seen , eventdetails.budget_end, eventdetails.people , person_details.name , person_details.email,person_details.contact from eventdetails JOIN person_details on eventdetails.personid = person_details.personid");
-
+                        // SELECT eventdetails.event_name , eventdetails.event_date,eventdetails.seen , eventdetails.budget_end, eventdetails.people , person_details.name , person_details.email,person_details.contact from eventdetails JOIN person_details on eventdetails.personid = person_details.personid;
 $outp = "";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
   if ($outp != "") {$outp .= ",";}

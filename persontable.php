@@ -279,7 +279,6 @@
                                                 <th >Contact</th>
                                                 <th >Email</th>
                                                 <th >Address</th>
-                                                <td>Seen</td>
                                                 <th>Delete</th>
                                             </tr>
                                         </thead>
@@ -291,9 +290,7 @@
                                                 <td >{{x.Contact}}</td>
                                                 <td >{{x.Email}}</td>
                                                 <td >{{x.Address}}</td>
-                                                <td> <button ng-click='activity.seen = !activity.seen'>
-                                                  <span>{{activity.seen ? 'Mark unread' : 'Mark read'}}</span>
-                                                </button></td>
+
                                                 <td><button class='btn btn-danger' ng-click="row.del('person_details','Personid', x.Personid,$index )">Delete</button></td>
                                             </tr>
 

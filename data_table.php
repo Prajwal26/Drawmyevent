@@ -268,7 +268,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-lg-9">
-                                <div class="table-responsive table--no-card m-b-30" ng-app="myApp" ng-controller="customersCtrl as mn">
+                                <div class="table-responsive table--no-card m-b-30" ng-app="myApp" ng-controller="dataController as mn">
                                     <table class="table table-borderless table-striped table-earning">
                                         <thead>
                                             <tr>
@@ -280,6 +280,8 @@
                                                 <th >Name</th>
                                                 <th>Email</th>
                                                 <th>Contact</th>
+                                                <th>Seen</th>
+                                                <th>Delete</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -287,13 +289,13 @@
 
                                                 <td>{{x.Eventname}}</td>
                                                 <td>{{x.Date}}</td>
-                                                <td >{{x.Budget}}</td>
-                                                <td >{{x.People}}</td>
+                                                <td>{{x.Budget}}</td>
+                                                <td>{{x.People}}</td>
                                                 <td pid={{x.Personid}}>{{x.Name}}</td>
                                                 <td >{{x.Email}}</td>
                                                 <td >{{x.Contact}}</td>
-                                                <td><button class='btn btn-light' name="seen" ng-click="row.up('eventdetails','Personid', x.Personid,$index)">Seen</button></td>
-                                                <td> <button class='btn btn-danger' ng-click="row.del('eventdetails','Personid', x.Personid,$index )">Delete</button></td>
+                                                <td ><button class='btn btn-light' name="seen" ng-click="row.up('eventdetails',  x.Eventname , 'event_name')">Seen</button></td>
+                                                <td> <button class='btn btn-danger' ng-click="row.del('person_details','Email', x.email,$index )">Delete</button></td>
                                             </tr>
 
                                         </tbody>
@@ -339,13 +341,8 @@
     <!-- Main JS-->
     <script src=angular.min.js ></script>
     <script src="js/main.js"></script>
-    <script>
-    var app = angular.module('myApp', []);
-app.controller('customersCtrl', function($scope, $http) {
-  $http.get("data.php")
-  .then(function (response) {$scope.names = response.data.records;});
-});
-    </script>
+    <script src="app.js" charset="utf-8"></script>
+    <script src="all.Service.js" charset="utf-8"></script>
 
 </body>
 

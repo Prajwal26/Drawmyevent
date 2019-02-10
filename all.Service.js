@@ -27,22 +27,37 @@ function mainService($http) {
   });
 };
 
-  serve.update=function(table,index){
-    console.log(table,index);
+  serve.update=function(table,index,parameter){
+    console.log(table,index,parameter);
     var response=$http({
       method: 'post',
       url: 'seen.php',
       data:
       {
+        per:index,
         table:table,
-
-        personid:index
+        para:parameter
       },
     }).then(function successCallback(response) {
       console.log(response);
 
     });
-
 };
-}
-)()
+};
+})()
+//
+//   serve.update=function(table,index){
+//     console.log(table,index);
+//     var response=$http({
+//       method: 'post',
+//       url: 'seen.php',
+//       data:
+//       {
+//         table:table,
+//         personid:index
+//       },
+//     }).then(function successCallback(response) {
+//       console.log(response);
+//
+//     });
+// };

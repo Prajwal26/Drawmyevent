@@ -9,6 +9,6 @@ $postdata = file_get_contents("php://input");
   $personid=  $request->personid;
   $tablename=$request->table;
   $para=$request->param;
-mysqli_query($conn,"delete from $tablename  where personid=".$personid);
+mysqli_query($conn,"delete from $tablename  where ".$para."=".$personid);
 echo "1";
 ?>

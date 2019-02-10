@@ -286,15 +286,16 @@
                                         </thead>
                                         <tbody>
                                             <tr ng-repeat="x in row.names">
-                                                <td pid={{x.Personid}}>{{x.Name}}</td>
+
+                                                <td >{{x.Name}}</td>
                                                 <td>{{x.Date}}</td>
                                                 <td>{{x.Contact}}</td>
                                                 <td >{{x.People}}</td>
                                                 <td >{{x.BudgetStart}}</td>
                                                 <td >{{x.BudgetEnd}}</td>
                                                 <td >{{x.Specification}}</td>
-                                                <td ><button class='btn btn-light' name="seen" ng-click="row.up('eventdetails', x.Personid)">Seen</button></td>
-                                                <td ><button class='btn btn-danger' ng-click="row.del('eventdetails','Personid', x.Personid,$index )">Delete</button></td>
+                                                <td ><button class='btn btn-light' name="seen" ng-click="row.up('eventdetails',  x.Eventid , 'event_id')">Seen</button></td>
+                                                <td ><button class='btn btn-danger' ng-click="row.del('eventdetails','event_id', x.Eventid,$index )">Delete</button></td>
                                             </tr>
 
                                         </tbody>
@@ -340,9 +341,9 @@
 
     <!-- Main JS-->
     <script src=angular.min.js ></script>
-    <script src="js/main.js"></script>
     <script src="app.js" charset="utf-8"></script>
     <script src="all.Service.js" charset="utf-8"></script>
+    <script src="js/main.js"></script>
 
 </body>
 
